@@ -4,8 +4,40 @@
 import axios from 'axios'
 
 const myQuery = `{
-  draw(date:"Aug 07 2022", type:"eurojackpot", limit:1) {
-    draws
+  draw(type: "eurojackpot"){
+    backendError
+    draws {
+      additionalNumbers
+      date
+      gameAmount
+      jackpot
+      megaPlier
+      numbers
+      odds {
+        link
+        numberOfWinners
+        numbers
+        odd
+        winningClass
+        withOptions
+      }
+      powerPlay
+      seo {
+        description
+        texts {
+          content
+          headline
+        }
+        title
+      }
+      shares
+      time
+    }
+    success
+    visibleErrors {
+      idents
+      messages
+    }
   }
 }`
 
@@ -13,7 +45,6 @@ axios
   .get(`/api?query=${myQuery}`,)
   .then((res) => {
     console.log(res.data)
-    console.log(...res.data.errors)
   })
   .catch((err) => {
     console.log(err)

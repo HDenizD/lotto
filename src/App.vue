@@ -3,10 +3,14 @@
 <script setup lang="ts">
 import axios from 'axios'
 
-const myQuery = '{draw(type:eurojackpot, date)}'
+const myQuery = `{
+  draw(date:"Aug 07 2022", type:"eurojackpot", limit:1) {
+    draws
+  }
+}`
 
 axios
-  .get(`/api?query=${myQuery}`)
+  .get(`/api?query=${myQuery}`,)
   .then((res) => {
     console.log(res.data)
     console.log(...res.data.errors)

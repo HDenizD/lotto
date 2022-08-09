@@ -1,7 +1,7 @@
 <template>
   <p-card style="max-width: 650px" class="mx-auto my-5 shadow-6">
     <template #title>
-      <div class="text-center">{{ title }} </div>
+      <div class="text-center">{{ title }}</div>
     </template>
     <template #content>
       <ul>
@@ -11,7 +11,11 @@
         <li>Additional Numbers: {{ additionalNumbers.join(' ') }}</li>
       </ul>
     </template>
-    <!-- <template #footer> footer </template> -->
+    <template #footer>
+      <div class="flex justify-content-end">
+        <p-button label="Won? Then get your prize" class="p-button-success" />
+      </div>
+    </template>
   </p-card>
 </template>
 
@@ -48,6 +52,6 @@ defineProps({
 
 <style scoped lang="scss">
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 </style>

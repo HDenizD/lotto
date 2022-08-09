@@ -6,7 +6,7 @@
     <template #content>
       <div class="text-center">
         <div class="font-semibold mb-3">Do you wanna play a game?</div>
-        <p-image src="@/../public/jigsaw.gif" />
+        <p-image src="/jigsaw.gif" image-class="image" />
       </div>
     </template>
     <template #footer>
@@ -14,7 +14,7 @@
         <p-button
           icon="pi pi-times"
           class="p-button-secondary"
-          label="no, thanks. I saw the movies"
+          label='no, thanks. I "saw" the movies'
         />
         <p-button
           icon="pi pi-check"
@@ -36,4 +36,9 @@ defineProps({
 })
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+:deep(img.image) {
+  max-width: 100%;
+  height: auto;
+}
+</style>

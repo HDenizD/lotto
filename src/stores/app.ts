@@ -31,17 +31,7 @@ export const useApp = defineStore('app', {
             date
             gameAmount
             jackpot
-            megaPlier
             numbers
-            odds {
-              link
-              numberOfWinners
-              numbers
-              odd
-              winningClass
-              withOptions
-            }
-            powerPlay
             seo {
               description
               texts {

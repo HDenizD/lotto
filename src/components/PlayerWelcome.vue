@@ -1,7 +1,7 @@
 <template>
   <p-card style="max-width: 650px" class="mx-auto shadow-6">
     <template #title>
-      <div class="text-center">Welcome {{ playerName }} 🤷</div>
+      <div class="text-center test">Welcome Player 🤷</div>
     </template>
     <template #content>
       <div class="text-center">
@@ -27,14 +27,7 @@
   </p-card>
 </template>
 
-<script setup lang="ts">
-defineProps({
-  playerName: {
-    type: String,
-    default: 'Player',
-  },
-})
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 :deep(img.image) {

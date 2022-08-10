@@ -6,7 +6,8 @@
     <template #content>
       <div class="text-center">
         <div class="font-semibold mb-3">Do you wanna play a game?</div>
-        <p-image src="/jigsaw.gif" image-class="image" />
+        <p-image v-if="noGamesToday" src="/sad-billy.png" image-class="image" />
+        <p-image v-else src="/jigsaw.gif" image-class="image" />
       </div>
     </template>
     <template #footer>
@@ -15,6 +16,7 @@
           icon="pi pi-times"
           class="p-button-secondary"
           label='no, thanks. I "saw" the movies'
+          @click="noGamesToday = true"
         />
         <p-button
           icon="pi pi-check"
@@ -27,11 +29,15 @@
   </p-card>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const noGamesToday = ref(false)
+</script>
 
 <style lang="scss" scoped>
 :deep(img.image) {
-  max-width: 100%;
+  max-width: 300px;
   height: auto;
 }
 </style>

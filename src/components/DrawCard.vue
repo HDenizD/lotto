@@ -13,14 +13,26 @@
     </template>
     <template #footer>
       <div class="flex justify-content-end">
-        <p-button label="Won? Then get your prize" class="p-button-success" />
+        <p-button
+          label="Won? Then get your prize"
+          class="p-button-success"
+          @click="isGetPrizeClicked = true"
+        />
       </div>
+      <p-dialog
+        v-model:visible="isGetPrizeClicked"
+        :breakpoints="{ '960px': '75vw', '640px': '90vw' }"
+        :style="{ width: '50vw' }"
+        :modal="true"
+      >
+        <p-image src="/nice-smack.gif" image-class="flex mx-auto" />
+      </p-dialog>
     </template>
   </p-card>
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
+import { PropType, ref } from 'vue'
 
 defineProps({
   date: {
@@ -48,6 +60,8 @@ defineProps({
     default: () => ['0', '0', '0', '0', '0'],
   },
 })
+
+const isGetPrizeClicked = ref(false)
 </script>
 
 <style scoped lang="scss">

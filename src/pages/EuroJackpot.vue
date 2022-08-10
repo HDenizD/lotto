@@ -14,13 +14,9 @@
 <script setup lang="ts">
 import DrawCard from '@/components/DrawCard.vue'
 import { useApp } from '@/stores'
-// import { onMounted } from 'vue'
 
 const appStore = useApp()
 
-// onMounted(() => {
-//   appStore.fetchDrawingResults()
-// })
 </script>
 
 <style lang="scss" scoped></style>

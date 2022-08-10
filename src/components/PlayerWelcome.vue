@@ -5,7 +5,7 @@
     </template>
     <template #content>
       <div class="text-center">
-        <div class="font-semibold mb-3">Do wyou wanna play a game?</div>
+        <div class="font-semibold mb-3">Do you wanna play a game?</div>
         <p-image src="/jigsaw.gif" image-class="image" />
       </div>
     </template>
